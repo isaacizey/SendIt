@@ -1,0 +1,102 @@
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+.form-control {border-radius: 18px;
+    background: #fff;
+    border: none;
+    color: #00B0FF;
+    padding: 20px; 
+    width: 300px;
+    height: 15px;}
+.form-control-label {padding: 16px; color: green}
+.sidebar{width: 25%;background-color: white;float: left; padding: 16px;margin: 16px;
+  box-shadow: 2px 3px #C8E6C9;position: fixed;margin-top: 60px}
+.sender-image{width: 50px;height: 50px}
+.item-container{background-color: white;float: left;width: 40%;padding: 15px;margin:15px;box-shadow: 2px 3px #C8E6C9;}
+.user-image {height: 25px;width: 25px}
+.sidebar-item{padding: 10px;float: left; }
+.sidebar-item li {text-decoration:none;padding-top: 20px}
+body{}
+h1 {color:#0091EA;}
+a{text-decoration: none;color:#0091EA;}
+.status{border: 1px #C8E6C9 solid;padding: 3px;margin-top:5px }
+.quantity{display: inline;}
+.quantity-value{float: left}
+.btn {padding: 2px;margin: 3px;color:#0091EA;font-size: 25px;background-color:#0091EA;
+  border-radius: 12px;color: white; border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;  }
+
+.right-nav {float: right;padding-right: 30px;display: inline;}
+.left-nav {float: left;display: inline;}
+.site-header{width: 100%;background-color: white;top: 0px;margin-bottom: 50px}
+
+.form-group {margin:5px;}
+.destination{float: left;}
+.main-body{width:60%;float: right;margin:20px;clear: left;}
+.both-sides{clear: top;margin-top: 30px;  }
+.site-header {position: fixed;}
+.login-body {margin-right: 20%;margin-left: 20%;margin-top: 10%}
+.account-body{margin-right: 20%;margin-left: 20%;background-color: white;padding: 50px;margin-top: 5%}
+.register-body{margin-right: 20%;margin-left: 20%;margin-top: 10%}
+.nav-item {padding: 5px;margin: 8px}
+.login-message{margin-top: 50px;background-image: url(static/images/sendbg.jpg);}
+.content-section{margin-top: 50px}
+body {
+  background: #E8F5E9;
+  color: #333333;
+  
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+
+}
+
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}

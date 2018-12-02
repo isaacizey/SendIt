@@ -1,0 +1,66 @@
+
+ {% if current_user.username==null %}
+   <div class ="login-message login-body">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+         <h1> Welcome to <span style="color: red;border-right: 3px #0091EA solid;border-radius: 50%">SendIt</span></h1>
+          <h1> **Yor parcel delivery network**</h1>
+          <h4>Do you have an account? login or create on below </h4>
+          <a href="{{url_for('login')}}"><button class="btn">Login</button></a>
+           <a href="{{url_for('register')}}"><button class="btn">SignUp</button></a>
+
+        </div>
+
+        {% else %}
+       
+{% extends "new_layout.html" %}
+{% block content %}
+
+    {% for post in posts %}
+      {% if post.author.username==current_user.username %}
+       
+       <div class="item-container">
+          <img class="user-image" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
+         
+                
+              <a  href="#">{{ post.author.username }}</a>
+              <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+            
+            <h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
+            
+           <div class="quantity"><h4>Quantity :{{ post.content }}</h4></div>
+            
+              
+            <img style="height: 25px;width: 25px" src="{{ url_for('static', filename='images/destination.png') }}">Destination: {{ post.location }}
+             
+              <img style="height: 25px;width: 25px" src="{{ url_for('static', filename='images/current.png') }}"> Now : {{ post.current_location }}
+                
+              <div class="status">  Status : {{ post.status }}</div>
+                
+        </div>
+
+       
+       
+    
+            
+
+      {% endif %}
+       
+    {% endfor %}
+
+
+{% endblock content %}
+
+{% block profile_pic %}
+          
+       <p style="float:left"><h3>  Logged in as: {{current_user.username}}</h3></p>
+{% endblock %}
+
+ {% block delivered %}
+    {{ length }}
+ {% endblock %}
+
+ {% block transit %}
+    
+
+ {% endblock %}
+ {% endif  %}

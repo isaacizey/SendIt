@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+
+  <div class="site-header">
+      <div class="left-nav">
+            <h3>  <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
+              <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
+            </div>
+
+            <!-- Navbar Right Side -->
+            <div class="right-nav">
+              {% if current_user.is_authenticated %}
+                <a class="nav-item" href="{{ url_for('new_post') }}">New Post</a>
+                <a class="nav-item" href="{{ url_for('account') }}">Account</a>
+                <a class="nav-item" href="{{ url_for('logout') }}">Logout</a>
+              {% else %}
+                <a class="nav-item" href="{{ url_for('login') }}">Login</a>
+                <a class="nav-item" href="{{ url_for('register') }}">Register</a>
+              {% endif %}
+            </div></h3>
+          
+    </div>
+    <div class="both-sides">
+
+ <div class="sidebar">
+          
+            <h3>User Details</h3>
+        </hr>
+            {% block profile_pic %}{% endblock %}
+             <a class="nav-item" href="{{ url_for('new_post') }}"><h4 style="border:2px #E8F5E9 solid;color:#0091EA;border-radius: 5%;padding: 8px;background-color: #fff">Send a Parcel?</h4></a>
+              <a class="nav-item" href="{{ url_for('home') }}"><h4 style="border:2px #E8F5E9 solid;color:#0091EA; border-radius: 5%;padding: 8px;background-color: #fff">View Parcels?</h4></a>
+               <a class="nav-item" href="{{ url_for('account') }}"><h4 style="border:2px #E8F5E9 solid;color:#0091EA;border-radius: 5%;padding: 8px;background-color: #fff">My account</h4></a>
+            </p>
+            <p class='text-muted'>
+              <ul class="list-group">
+                <div class="sidebar-item"><h4>Total Percels</h4><h1>3 {% block total %}{% endblock %}</h1></div>
+                <div class="sidebar-item"><h4>Delivere</h4><h1> {% block delivered %}{% endblock %}</h1></div>
+                <div class="sidebar-item"><h4>On Transit</h4><h1> {% block transit %}{% endblock %}</h1></div>
+               
+              </ul>
+            </p>
+          
+        </div>
+<div class="main-body">
+	 {% block content %}{% endblock %}
+</div>
+
+
+</div>
+
+</div>
+
+</body>
+</html>

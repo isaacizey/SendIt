@@ -1,0 +1,24 @@
+{% extends "new_layout.html" %}
+{% block content %}
+    {% for post in posts %}
+       <div class="item-container">
+          <img class="user-image" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
+         
+                
+              <a  href="#">{{ post.author.username }}</a>
+              <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+            
+            <h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
+            
+           <div class="quantity"><h4>Quantity :{{ post.content }}</h4></div>
+            
+              
+            <img style="height: 25px;width: 25px" src="{{ url_for('static', filename='images/destination.png') }}">Destination: {{ post.location }}
+             
+              <img style="height: 25px;width: 25px" src="{{ url_for('static', filename='images/current.png') }}"> Now : {{ post.current_location }}
+                
+              <div class="status">  Status : {{ post.status }}</div>
+                
+        </div>
+    {% endfor %}
+{% endblock content %}
